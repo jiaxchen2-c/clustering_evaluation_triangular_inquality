@@ -1,0 +1,322 @@
+\section{Prove triangular inequality of the transformation on Pearson correlation}
+Appendix one text goes here.
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We define the distance of A and B by $d_r (X, Y)=\sqrt[]{1-|\rho (X, Y)|}$, where $\rho$ is the Pearson correlation coefficient, and claim that $d_r$ is a metric. Following we are going to prove $\Gamma$ satisfies triangular inequality.
+
+By the triangular inequality of distance in n-dimensional Euclidean space, d(X, Y)+d(Y, Z)$\geq$d(X, Z). Take X=($x_1, x_2, ..., x_n$), Y=($y_1, y_2, ..., y_n$) and Z=($z_1, z_2, ..., z_n$) such that
+\begin{equation}\label{nor}
+\begin{array}{ccl}
+\sum_{i=1}^{n}x_i^2=\sum_{i=1}^{n}y_i^2=\sum_{i=1}^{n}z_i^2=1\\
+\sum_{i=1}^{n}x_i=\sum_{i=1}^{n}y_i=\sum_{i=1}^{n}z_i=0
+\end{array}
+\end{equation}
+Then the triangular inequality
+\begin{equation}
+\sqrt[]{\sum_{i=1}^{n}(x_i-y_i)^2}+\sqrt[]{\sum_{i=1}^{n}(y_i-z_i)^2}\geq\sqrt[]{\sum_{i=1}^{n}(x_i-z_i)^2}
+\end{equation}
+can be rewritten as
+\begin{equation}\label{sta}
+\sqrt[]{1-\sum_{i=1}^{n}x_i y_i}+\sqrt[]{1-\sum_{i=1}^{n}y_i z_i}\geq\sqrt[]{1-\sum_{i=1}^{n}x_i z_i}
+\end{equation}
+For data from a sample, the Pearson correlation coefficient can be calculated as follows
+\begin{equation}
+\rho_{XY}=\frac{\sum_{i=1}^{n}{x_i y_i}- n\bar{x}\bar{y}}{(n-1)s_X s_Y}
+\end{equation}
+
+Since Pearson correlation coefficient is invariant under  
+linear transformation, which means $\rho_{\tilde{X}\tilde{Y}}$=$\rho_{XY}$ with $\tilde{X}=a(X-\bar{x})$ and $\tilde{Y}=b(Y-\bar{y})$ satisfying
+\begin{equation}
+\begin{array}{ccl}
+\sum_{i=1}^{n}\tilde{x}_i^2=\sum_{i=1}^{n}\tilde{y}_i^2=1\\
+\sum_{i=1}^{n}\tilde{x}_i=\sum_{i=1}^{n}\tilde{y}_i=0
+\end{array}
+\end{equation}
+where $\bar{x}$ and $\bar{y}$ are the sample means of X and Y, it can be rewritten as
+\begin{equation}
+\rho_{XY}=\rho_{\tilde{X}\tilde{Y}}=\sum_{i=1}^{n}\tilde{x}_i\tilde{y}_i
+\end{equation}
+
+Without loss of generality, we assume the samples appearing following are normalized (i.e. satisfying equations \ref{nor}).
+
+Therefore, we have the modified Pearson distance
+\begin{equation}
+d_r (X,Y)=\sqrt[]{1-|\rho_{XY}|}=\sqrt[]{1-|\sum_{i=1}^{n}x_i y_i|}
+\end{equation}
+To prove the triangular inequality of $d_r$, we divide the cases by the sign of $\rho$.
+
+\subsubsection*{Case I}
+When $\rho_{XY}\geq0$, $\rho_{YZ}\geq0$, $\rho_{XZ}\geq0$,
+\begin{equation}
+d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)=\sqrt[]{1-\sum_{i=1}^{n}x_i y_i}+\sqrt[]{1-\sum_{i=1}^{n}y_i z_i}-\sqrt[]{1-\sum_{i=1}^{n}x_i z_i}\geq 0
+\end{equation}
+by (\ref{sta})
+
+\subsubsection*{Case II}
+When $\rho_{XY}\geq0$, $\rho_{YZ}<0$, $\rho_{XZ}<0$, take $c_i=-z_i$.
+\begin{equation}
+\begin{split}
+&d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)\\
+&=\sqrt[]{1-\sum_{i=1}^{n}x_i y_i}+\sqrt[]{1+\sum_{i=1}^{n}y_i z_i}-\sqrt[]{1+\sum_{i=1}^{n}x_i z_i}\\
+&=\sqrt[]{1-\sum_{i=1}^{n}x_i y_i}+\sqrt[]{1-\sum_{i=1}^{n}y_i c_i}-\sqrt[]{1-\sum_{i=1}^{n}x_i c_i}\\
+&\geq0
+\end{split}
+\end{equation}
+by (\ref{sta})
+
+\subsubsection*{Case III}
+The case when $\rho_{XY}<0$, $\rho_{YZ}\geq0$, $\rho_{XZ}<0$ is equivalent to case II.
+\begin{equation}
+d_r(X,Y)+d_r(Y,Z)-d_r(X,Z) \geq 0
+\end{equation}
+holds
+
+\subsubsection*{Case IV}
+When $\rho_{XY}<0$, $\rho_{YZ}<0$, $\rho_{XZ}\geq0$, take $b_i=-y_i$.
+\begin{equation}
+\begin{split}
+&d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)\\
+&=\sqrt[]{1+\sum_{i=1}^{n}x_i y_i}+\sqrt[]{1+\sum_{i=1}^{n}y_i z_i}-\sqrt[]{1-\sum_{i=1}^{n}x_i z_i}\\
+&=\sqrt[]{1-\sum_{i=1}^{n}x_i b_i}+\sqrt[]{1-\sum_{i=1}^{n}b_i z_i}-\sqrt[]{1-\sum_{i=1}^{n}x_i z_i}\\
+&\geq0
+\end{split}
+\end{equation}
+by (\ref{sta})
+
+\subsubsection*{Case V}
+When $\rho_{XY}<$0, $\rho_{YZ}<$0, $\rho_{XZ}<$0
+\begin{equation}
+d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)=\sqrt[]{1+\sum_{i=1}^{n}x_i y_i}+\sqrt[]{1+\sum_{i=1}^{n}y_i z_i}-\sqrt[]{1+\sum_{i=1}^{n}x_i z_i}
+\end{equation}
+Take $b_i=-y_i$. Therefore we have 
+\begin{equation}
+\begin{array}{ccl}
+\sum_{i=1}^{n}x_i b_i>0\\
+\sum_{i=1}^{n}b_i z_i>0\\
+\sum_{i=1}^{n}x_i z_i<0
+\end{array}
+\end{equation}
+\begin{equation}\label{alln}
+\begin{split}
+&d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)\\
+&=\sqrt[]{1+\sum_{i=1}^{n}x_i y_i}+\sqrt[]{1+\sum_{i=1}^{n}y_i z_i}-\sqrt[]{1+\sum_{i=1}^{n}x_i z_i}\\
+&=\sqrt[]{1-\sum_{i=1}^{n}x_i b_i}+\sqrt[]{1-\sum_{i=1}^{n}b_i z_i}-\sqrt[]{1+\sum_{i=1}^{n}x_i z_i}\\
+&>\sqrt[]{1-\sum_{i=1}^{n}x_i b_i}+\sqrt[]{1-\sum_{i=1}^{n}b_i z_i}-\sqrt[]{1-\sum_{i=1}^{n}x_i z_i}\\
+&\geq0
+\end{split}
+\end{equation}
+by (\ref{sta})
+
+\subsubsection*{Case VI}
+When $\rho_{XY}<0$, $\rho_{YZ}\geq0$, $\rho_{XZ}\geq0$, 
+\begin{equation}
+d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)
+=\sqrt[]{1+\sum_{i=1}^{n}x_i y_i}+\sqrt[]{1-\sum_{i=1}^{n}y_i z_i}-\sqrt[]{1-\sum_{i=1}^{n}x_i z_i}
+\end{equation}
+Take $a_i=-x_i$,
+\begin{equation}
+\begin{split}
+&\sqrt[]{1+\sum_{i=1}^{n}x_i y_i}+\sqrt[]{1-\sum_{i=1}^{n}y_i z_i}-\sqrt[]{1-\sum_{i=1}^{n}x_i z_i}\\
+&=\sqrt[]{1-\sum_{i=1}^{n}a_i y_i}+\sqrt[]{1-\sum_{i=1}^{n}y_i z_i}-\sqrt[]{1+\sum_{i=1}^{n}x_i z_i}\\
+&>0
+\end{split}
+\end{equation}
+by (\ref{alln})
+
+\subsubsection*{Case VII}
+The case when $\rho_{XY}<0$, $\rho_{YZ}\geq0$, $\rho_{XZ}\geq0$, is equivalent to case VI.
+\begin{equation}
+d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)>0
+\end{equation}
+still holds.
+
+\subsubsection*{Case VIII}
+When $\rho_{XY}\geq0$, $\rho_{YZ}\geq0$, $\rho_{XZ}<0$, 
+\begin{equation}
+\begin{split}
+&d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)\\
+&=\sqrt[]{1-\sum_{i=1}^{n}x_i y_i}+\sqrt[]{1-\sum_{i=1}^{n}y_i z_i}-\sqrt[]{1+\sum_{i=1}^{n}x_i z_i}\\
+&\geq0
+\end{split}
+\end{equation}
+by (\ref{alln})
+
+
+\begin{equation}
+d_r(X,Y)+d_r(Y,Z) \geq d_r(X,Z)
+\end{equation}
+holds for any X, Y and Z. The proof of triangular inequality of modified Pearson distance is therefore completed.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Modified Spearman?s Rank Distance}
+We define the distance of A and B by $\Lambda (X,Y)=1-\sqrt[]{|r (X,Y)|}$, where r is the Spearman rank correlation, and claim that $\Lambda$ is a metric. Following we are going to illustrate the triangular inequality for $\Lambda$. 
+%lambda? or both change to Gamma???
+
+$\Lambda(X,Y)=1-\sqrt[]{|r (X,Y)|}$ can be regarded as a special case of $d_r (X,Y)=\sqrt[]{1-|\rho (X,Y)|}$ where X=($x_1, x_2, ..., x_n$), Y=($y_1, y_2, ..., y_n$) and $x_1, x_2, ..., x_n$, $y_1, y_2, ..., y_n$ are integers. By the triangular inequality of modified Pearson Distance, we can declare the triangular inequality for modified Spearman's rank distance. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Prove of uncentered Pearson correlation}
+We define the distance of A and B by $d_r (X, Y)=\sqrt[]{1-|\rho (X, Y)|}$, where $\rho$ is the uncentered Pearson correlation coefficient, and claim that $d_r$ is a metric. Following we are going to prove $d_r$ satisfies triangular inequality.
+
+Take X=($x_1, x_2, ..., x_n$), Y=($y_1, y_2, ..., y_n$) and Z=($z_1, z_2, ..., z_n$).
+
+Then the triangular inequality
+\begin{equation}
+\sqrt[]{\sum_{i=1}^{n}(x_i-y_i)^2}+\sqrt[]{\sum_{i=1}^{n}(y_i-z_i)^2}\geq\sqrt[]{\sum_{i=1}^{n}(x_i-z_i)^2}
+\end{equation}
+
+For data from a sample, the uncentered Pearson correlation coefficient can be calculated as follows
+\begin{equation}
+\rho_{XY}=\frac{1}{n}\sum_{i=1}^{n}(\frac{x_i}{\sigma_x^{(o)}})(\frac{y_i}{\sigma_y^{(o)}})
+\end{equation}
+where $\sigma_x^{(o)}=\sqrt{\frac{1}{n}\sum_{i=1}^n x_i^2}$, $\sigma_y^{(o)}=\sqrt{\frac{1}{n}\sum_{i=1}^n y_i^2}$.
+ 
+$\rho_{XY}$ can be written as cosine similarity,
+\begin{equation}
+cos \theta=\frac{X \cdot Y}{|X| |Y|}=\frac{\sum_{i=1}^{n}x_iy_i}{\sqrt{\sum_{i=1}^nx_i^2}\sqrt{\sum_{i=1}^ny_i^2}},
+\end{equation}
+where $\theta$ is the angle between X and Y.
+Suppose X, Y, and Z in the same plane. %!!!!!!!!!!!!!!!!!! need extend to higher dimension 
+Let $\alpha$ denote the angle between X and Y, $\beta$ denote the angle between Y and Z, so the angle between X and Z is $\alpha+\beta$
+To prove the triangular inequality of $\Gamma$, we divide the cases by the range of $\alpha$ and $\beta$ (sign of $cos \alpha$ and $cos \beta$). 
+Suppose $0 \leq \alpha \leq \pi$, $0 \leq \beta \leq \pi$,% $0\leq\alpha+\beta\leq\pi$ or $0\leq-(\alpha+\beta)\leq\pi$.
+%%%%%%%%%%%%
+\subsubsection*{Case I}
+$0 \leq \alpha \leq \frac{\pi}{2}$, $0 \leq \beta \leq \frac{\pi}{2}$, $0 \leq \alpha+\beta \leq \frac{\pi}{2}$, %????
+
+\begin{equation}
+\begin{split}
+&d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)\\
+%&=\sqrt{1-|cos\alpha|}+\sqrt{1-|cos\beta|} - \sqrt{1-|cos(\alpha+\beta)|}\\
+&=\sqrt{1-cos\alpha}+\sqrt{1-cos\beta} - \sqrt{1-cos(\alpha+\beta)}\\
+%&=\sqrt{1-(1-2sin^2{\frac{\alpha}{2}})}+\sqrt{1-(1-2sin^2{\frac{\beta}{2}})} - \sqrt{1-(1-2sin^2{\frac{\alpha+\beta}{2}})}\\
+%&=\sqrt{2}sin\frac{\alpha}{2}+\sqrt{2}sin\frac{\beta}{2}-\sqrt{2}sin\frac{\alpha+\beta}{2}\\
+%&=\sqrt{2}(sin\frac{\alpha}{2} + sin\frac{\beta}{2} - sin\frac{\alpha}{2}cos\frac{\beta}{2} - cos\frac{\alpha}{2}sin\frac{\beta}{2})\\
+&=\sqrt{2}(sin\frac{\alpha}{2}(1-cos\frac{\beta}{2})+sin\frac{\beta}{2}(1-cos\frac{\alpha}{2}))
+&\geq 0
+\end{split}
+\end{equation}
+
+%by $cos\frac{\beta}{2} \leq 1$ and $cos\frac{\alpha}{2} \leq 1$
+by $1-cos\frac{\beta}{2} \geq 0$, $1-cos\frac{\alpha}{2} \geq 0$.
+%%%%%%%%%%%%
+
+\subsubsection*{Case II}%%%wait for complete
+$0 \leq \alpha \leq \frac{\pi}{2}$, $0 \leq \beta \leq \frac{\pi}{2}$, $\frac{\pi}{2} \leq \alpha+\beta \leq \pi$,
+$\frac{\pi}{4} \leq \frac{\alpha+\beta}{2} \leq \frac{\pi}{2}$
+
+\begin{equation}
+\begin{split}
+&d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)\\
+%&=\sqrt{1-|cos\alpha|}+\sqrt{1-|cos\beta|} - \sqrt{1-|cos(\alpha+\beta)|}\\
+&=\sqrt{1-cos\alpha}+\sqrt{1-cos\beta} - \sqrt{1+cos(\alpha+\beta)}\\
+%&=\sqrt{1-(1-2sin^2{\frac{\alpha}{2}})}+\sqrt{1-(1-2sin^2{\frac{\beta}{2}})} - \sqrt{1+cos^2\frac{\alpha+\beta}{2}-sin^2\frac{\alpha+\beta}{2}}\\
+&=\sqrt{2}(sin\frac{\alpha}{2}+sin\frac{\beta}{2}-cos\frac{\alpha+\beta}{2})\\
+&\geq 0
+\end{split}
+\end{equation}
+
+can be written as
+\begin{equation}
+\begin{split}
+&sin\frac{\alpha}{2}+sin\frac{\beta}{2} \geq cos\frac{\alpha+\beta}{2}\\
+&sin^2\frac{\alpha}{2}+sin^2\frac{\beta}{2}+2sin\frac{\alpha}{2}sin\frac{\beta}{2} \geq 1-sin^2\frac{\alpha+\beta}{2}\\
+%&sin^2\frac{\alpha}{2}+sin^2\frac{\beta}{2}+2sin\frac{\alpha}{2}sin\frac{\beta}{2} \geq 1-(sin\frac{\alpha}{2}cos\frac{\beta}{2}+cos\frac{\alpha}{2}sin\frac{\beta}{2})^2\\
+%&sin^2\frac{\alpha}{2}(1+cos^2\frac{\beta}{2})+sin^2\frac{\beta}{2}(1+cos^2\frac{\alpha}{2}) \geq  1-2sin\frac{\alpha}{2}sin\frac{\beta}{2}(1+cos\frac{\alpha}{2}cos\frac{\beta}{2})\\
+%&(1-cos^2\frac{\alpha}{2})(1+cos^2\frac{\beta}{2})+(1-cos^2\frac{\beta}{2})(1+cos^2\frac{\alpha}{2}) \geq  1-2sin\frac{\alpha}{2}sin\frac{\beta}{2}(1+cos\frac{\alpha}{2}cos\frac{\beta}{2})\\
+%&1+cos^2\frac{\beta}{2}-cos^2\frac{\alpha}{2}-cos^2\frac{\alpha}{2}cos^2\frac{\beta}{2}+1+cos^2\frac{\alpha}{2}-cos^2\frac{\beta}{2}-cos^2\frac{\alpha}{2}cos^2\frac{\beta}{2} \geq 1-2sin\frac{\alpha}{2}sin\frac{\beta}{2}(1+cos\frac{\alpha}{2}cos\frac{\beta}{2})\\
+%&2-2cos^2\frac{\alpha}{2}cos^2\frac{\beta}{2} \geq 1-2sin\frac{\alpha}{2}sin\frac{\beta}{2}(1+cos\frac{\alpha}{2}cos\frac{\beta}{2}) \\
+%&2(1+cos\frac{\alpha}{2}cos\frac{\beta}{2})(1-cos\frac{\alpha}{2}cos\frac{\beta}{2})+2sin\frac{\alpha}{2}sin\frac{\beta}{2}(1+cos\frac{\alpha}{2}cos\frac{\beta}{2}) \geq 1\\
+%&2(1+cos\frac{\alpha}{2}cos\frac{\beta}{2})(1-cos\frac{\alpha}{2}cos\frac{\beta}{2}+sin\frac{\alpha}{2}sin\frac{\beta}{2}) \geq1\\
+%&2(1+cos\frac{\alpha}{2}cos\frac{\beta}{2})(1-cos\frac{\alpha+\beta}{2}) \geq 1\\
+%&2(1+cos\frac{\alpha+\beta}{2}+sin\frac{\alpha}{2}sin\frac{\beta}{2})(1-cos\frac{\alpha+\beta}{2})\geq 1\\
+%&2(1-cos\frac{\alpha+\beta}{2} +cos\frac{\alpha+\beta}{2} -cos^2 \frac{\alpha+\beta}{2}+sin\frac{\alpha}{2}sin\frac{\beta}{2} -cos\frac{\alpha+\beta}{2} sin\frac{\alpha}{2}sin\frac{\beta}{2}) \geq 1\\
+%&2-2cos^2\frac{\alpha+\beta}{2}+2sin\frac{\alpha}{2}sin\frac{\beta}{2}(1-cos\frac{\alpha+\beta}{2})\geq 1\\
+%&1+(1-2cos^2\frac{\alpha+\beta}{2})+2sin\frac{\alpha}{2}sin\frac{\beta}{2}(1-cos\frac{\alpha+\beta}{2}) \geq 1\\
+&-cos(\alpha+\beta)+2sin\frac{\alpha}{2}sin\frac{\beta}{2}(1-cos\frac{\alpha+\beta}{2}) \geq 0\\
+\end{split}
+\end{equation}
+
+holds for $1-cos\frac{\alpha+\beta}{2} \geq 0$, $sin\frac{\alpha}{2} sin\frac{\beta}{2} \geq 0$ and $cos(\alpha+\beta) \leq 0$
+%%%%%%%%%%%%
+\subsubsection*{Case III}
+$0 \leq \alpha \leq \frac{\pi}{2}$, $\frac{\pi}{2} \leq \beta \leq \pi$,  $\frac{\pi}{2} \leq \alpha+\beta \leq \frac{3\pi}{2}$
+
+\begin{equation}
+\begin{split}
+&d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)\\
+%&=\sqrt{1-|cos\alpha|}+\sqrt{1-|cos\beta|} - \sqrt{1-|cos(\alpha+\beta)|}\\
+&=\sqrt{1-cos\alpha}+\sqrt{1+cos\beta} - \sqrt{1+cos(\alpha+\beta)}\\
+%&=\sqrt{1-(1-2sin^2{\frac{\alpha}{2}})}+\sqrt{1+cos^2\frac{\beta}{2}-sin^2\frac{\beta}{2}} - \sqrt{1+cos^2\frac{\alpha+\beta}{2}-sin^2\frac{\alpha+\beta}{2}}\\
+%&=\sqrt{2}(sin\frac{\alpha}{2}+cos\frac{\beta}{2}-cos\frac{\alpha+\beta}{2})\\
+%&=\sqrt{2}(sin\frac{\alpha}{2}+cos\frac{\beta}{2}-cos\frac{\alpha}{2}cos\frac{\beta}{2}+sin\frac{\alpha}{2}sin\frac{\beta}{2})\\
+&=\sqrt{2}(sin\frac{\alpha}{2}(1+sin\frac{\beta}{2})-cos\frac{\beta}{2}(cos\frac{\alpha}{2}-1))\\
+&\geq 0
+\end{split}
+\end{equation}
+by $sin\frac{\alpha}{2} \geq 0$, $cos\frac{\beta}{2} \geq 0$, $cos\frac{\alpha}{2}-1 \leq 0$, $1+sin\frac{\beta}{2} \geq 0$
+%%%%%%%%%%%%
+
+\subsubsection*{Case IV}
+$\frac{\pi}{2} \leq \alpha \leq \pi$, $0 \leq \beta \leq \frac{\pi}{2}$, $\frac{\pi}{2} \leq \alpha+\beta \leq \frac{3\pi}{2}$
+and $\frac{\pi}{4} \leq \frac{\alpha}{2} \leq \frac{\pi}{2} $
+
+\begin{equation}
+\begin{split}
+&d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)\\
+%&=\sqrt{1-|cos\alpha|}+\sqrt{1-|cos\beta|} - \sqrt{1-|cos(\alpha+\beta)|}\\
+&=\sqrt{1+cos\alpha}+\sqrt{1-cos\beta} - \sqrt{1+cos(\alpha+\beta)}\\
+%&=\sqrt{2}(cos\frac{\alpha}{2} +sin\frac{\beta}{2} - cos\frac{\alpha+\beta}{2})\\
+%&=\sqrt{2}(cos\frac{\alpha}{2} +sin\frac{\beta}{2} -cos\frac{\alpha}{2} cos\frac{\beta}{2} + sin\frac{\alpha}{2}sin\frac{\beta}{2})\\
+&=\sqrt{2}(sin\frac{\beta}{2}(1+sin\frac{\alpha}{2})-cos\frac{\alpha}{2}(cos\frac{\beta}{2}-1))\\
+&\geq 0
+\end{split}
+\end{equation}
+for $sin\frac{\beta}{2} \geq 0$, $1+sin\frac{\alpha}{2} \geq 0$, $cos\frac{\alpha}{2} \geq 0$, $cos\frac{\beta}{2}-1 \leq 0$.
+
+%%%%%%%%%%%%
+\subsubsection*{Case V}
+$\frac{\pi}{2} \leq \alpha \leq \pi$,  $\frac{\pi}{2} \leq \beta \leq \pi$, $\frac{\pi}{2} \leq \alpha+\beta \leq 2\pi$ and $cos(\alpha+\beta)>0$\\
+and $\frac{\pi}{4} \leq \frac{\alpha}{2} \leq \frac{\pi}{2} $, $\frac{\pi}{4} \leq \frac{\beta}{2} \leq \frac{\pi}{2} $
+
+\begin{equation}
+\begin{split}
+&d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)\\
+%&=\sqrt{1-|cos\alpha|}+\sqrt{1-|cos\beta|} - \sqrt{1-|cos(\alpha+\beta)|}\\
+&=\sqrt{1+cos\alpha}+\sqrt{1+cos\beta} - \sqrt{1-cos(\alpha+\beta)}\\
+%&=\sqrt{2}(cos\frac{\alpha}{2}+cos\frac{\beta}{2}-sin(\frac{\alpha+\beta}{2}))\\
+%&=\sqrt{2}(cos\frac{\alpha}{2}+cos\frac{\beta}{2}-sin\frac{\alpha}{2}cos\frac{\beta}{2}-cos\frac{\alpha}{2}sin\frac{\beta}{2})\\
+&=\sqrt{2}(cos\frac{\alpha}{2}(1-sin\frac{\beta}{2})+cos\frac{\beta}{2}(1-sin\frac{\alpha}{2}))\\
+&\geq 0
+\end{split}
+\end{equation}
+
+by $cos\frac{\alpha}{2} \geq 0$, $1-sin\frac{\beta}{2} \geq 0$, $cos\frac{\beta}{2} \geq 0$, $1-sin\frac{\alpha}{2} \geq 0$
+
+%%%%%%%%%%%%
+\subsubsection*{Case VI}
+$\frac{\pi}{2} \leq \alpha \leq \pi$, $\frac{\pi}{2} \leq \beta \leq \pi$, $\frac{\pi}{2} \leq \alpha+\beta \leq 2\pi$ and $cos(\alpha+\beta)<0$,\\
+and $\frac{\pi}{4} \leq \frac{\alpha}{2} \leq \frac{\pi}{2} $, $\frac{\pi}{4} \leq \frac{\beta}{2} \leq \frac{\pi}{2} $
+
+\begin{equation}
+\begin{split}
+&d_r(X,Y)+d_r(Y,Z)-d_r(X,Z)\\
+%&=\sqrt{1-|cos\alpha|}+\sqrt{1-|cos\beta|} - \sqrt{1-|cos(\alpha+\beta)|}\\
+&=\sqrt{1+cos\alpha}+\sqrt{1+cos\beta} - \sqrt{1+cos(\alpha+\beta)}\\
+%&=\sqrt{2}(cos\frac{\alpha}{2}+cos\frac{\beta}{2}-cos\frac{\alpha+\beta}{2})\\
+%&=\sqrt{2}(cos\frac{\alpha}{2}+cos\frac{\beta}{2}-cos\frac{\alpha}{2}cos\frac{\beta}{2}+sin\frac{\alpha}{2}sin\frac{\beta}{2})\\
+&=\sqrt{2}sin\frac{\alpha}{2}sin\frac{\beta}{2}(\frac{cos\frac{\alpha}{2}+cos\frac{\beta}{2}}{sin\frac{\alpha}{2}sin\frac{\beta}{2}}-\frac{cos\frac{\alpha}{2}cos\frac{\beta}{2}}{sin\frac{\alpha}{2}sin\frac{\beta}{2}}+1)\\
+&\geq 0
+\end{split}
+\end{equation}
+
+for $cos\frac{\alpha}{2} \geq 0$, $cos\frac{\beta}{2} \geq 0$, $sin\frac{\alpha}{2} \geq 0$, $sin\frac{\beta}{2} \geq 0$
+
+$cos\frac{\alpha}{2} \leq sin\frac{\alpha}{2}$, $cos\frac{\beta}{2} \leq sin\frac{\beta}{2}$
+and $\frac{cos\frac{\alpha}{2}}{sin\frac{\alpha}{2}} \leq 1$, $\frac{cos\frac{\beta}{2}}{sin\frac{\beta}{2}} \leq 1$
