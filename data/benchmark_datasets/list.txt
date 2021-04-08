@@ -1,0 +1,17 @@
+01_alpha_factor.csv
+02_cdc_15.csv
+03_cdc_28.csv
+04_elutriation.csv
+05_1mM_menadione.csv
+06_1M_sorbitol.csv
+07_15mM_diamide.csv
+08_25mM_DTT.csv
+09_constant_32nM_H2O2.csv
+10_diauxic_shift.csv
+11_complete_DTT.csv
+12_heat_shock_1.csv
+13_heat_shock_2.csv
+14_nitrogen_depletion.csv
+15_YPD_1.csv
+16_YPD_2.csv
+17_yeast_sporulation.csv
